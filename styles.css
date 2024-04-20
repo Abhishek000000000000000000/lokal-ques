@@ -39,3 +39,18 @@
     text-decoration: none;
     color: #333;
 }
+
+/* styles.css */
+
+/* Center the product detail */
+#product-detail {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Style the product images */
+.product-images img {
+    width: 100%;
+    margin-bottom: 10px;
+}
