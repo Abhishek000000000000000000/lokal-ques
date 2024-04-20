@@ -10,7 +10,7 @@ if(productId){
     .then(product => {
         displayDetails(product);
     })
-    .catch(error => console.error(error));
+    .catch(error => console.log(error));
 }
 
 function displayDetails(product){
