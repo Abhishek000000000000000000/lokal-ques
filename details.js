@@ -16,9 +16,13 @@ if(productId){
 function displayDetails(product){
     const productDetail = document.getElementById("product-detail");
 
-    const imagesHTML = product.images.map(image => {
+    const imagesCarouselItems = product.images.map((image, index) => {
         if (image) {
-            return `<img src="${image}" alt="${product.name}">`;
+            return `
+                <div class="carousel-item ${index === 0 ? 'active' : ''}">
+                    <img src="${image}" class="d-block w-100" alt="${product.name}">
+                </div>
+            `;
         } else {
             return '';
         }
@@ -26,15 +30,25 @@ function displayDetails(product){
 
     const productDetailHTML = `
         <div class="card">
-        <img src="${product.thumbnail}" alt="${product.name}">
+        <div id="product-images-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            ${imagesCarouselItems}
+        </div>
+        <a class="carousel-control-prev" href="#product-images-carousel" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#product-images-carousel" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+
             <div class="card-body">
                 <h3>${product.name}</h3>
                 <p>${product.price}</p>
                 <p>${product.category}</p> 
                 <p>${product.description}</p> 
-                <div class="product-images">
-                ${imagesHTML}
-            </div>
             </div>
         </div>
     `;

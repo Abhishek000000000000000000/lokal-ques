@@ -1,0 +1,33 @@
+#product-detail {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+/* Style the carousel */
+.carousel-item img {
+    height: 500px; /* Adjust the height of the carousel images */
+    object-fit: cover;
+}
+
+/* Center the carousel controls */
+.carousel-control-prev,
+.carousel-control-next {
+    width: auto;
+}
+
+/* Style the product details */
+.card {
+    margin-top: 20px;
+}
+
+.card-body {
+    padding: 20px;
+}
+
+h3 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 5px;
+}
